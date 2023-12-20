@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Signup & Login page</title>
+    <!-- <link rel="stylesheet" href="./log.css"> -->
+  </head>
+  <body>
+    <div>
+      <div class="signup">
+        <form id="form_signup" method="POST">
+          <label>Sign up</label>
+          <br /><br />
+          <input type="text" name="txt" placeholder="User name" id="username" />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            id="email_signup"
+          />
+          <input
+            type="password"
+            name="pswd"
+            placeholder="Password"
+            id="password_signup"
+          />
+          <button type="submit">Sign up</button>
+        </form>
+      </div>
+
+      <div class="login">
+        <form id="form_login" method="POST">
+          <br />
+          <label>Login</label>
+          <br />
+          <br />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required=""
+            id="email_login"
+          />
+          <input
+            type="password"
+            name="pswd"
+            placeholder="Password"
+            required=""
+            id="password_login"
+          />
+          <button id="submit" type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="login.js"></script>

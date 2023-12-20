@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Urls</title>
+    <style>
+      #child-div {
+        display: flex;
+        justify-content: space-evenly;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>All URLS</h1>
+
+    <div id="main-container"></div>
+  </body>
+</html>
+
+<script>
+  let token = JSON.parse(localStorage.getItem("token")) || null;
+  window.addEventListener("load", () => {
+    getallURLs();
+  });
+
+  async function getallURLs() {
+    let data = await fetch("https://tough-bee-flip-flops.cyclic.app/allUrls", {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    data = await data.json();
+    appendData(data);
+  }
+
+  function appendData(data) {
+    document.querySelector("#main-container").innerHTML = null;
+
+    data.forEach(function (element, index) {
+      console.log(element);
+      let div = document.createElement("div");
+      div.setAttribute("id", "child-div");
+      let original_url = document.createElement("a");
+      original_url.setAttribute("href", element.original_url);
+      original_url.innerText = `Original Url : ${element.original_url}`;
+      let short_url = document.createElement("a");
+      short_url.setAttribute("href", element.short_url);
+      short_url.innerText = `Short Url : ${element.short_url}`;
+      div.append(original_url, short_url);
+      document.querySelector("#main-container").append(div);
+    });
+  }
+</script>
