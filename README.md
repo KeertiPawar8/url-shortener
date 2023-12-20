@@ -1,7 +1,7 @@
 # url-shortener
 It is a Url shortening application .It takes a long URL and generates a shortened version that redirects to the original URL.
 
-Frontend Deployed Link - https://fascinating-kleicha-c86f47.netlify.app/
+Frontend Deployed Link - https://amazing-sfogliatella-e39a1e.netlify.app/
 
 Backend Deployed Link - https://tough-bee-flip-flops.cyclic.app/
 
